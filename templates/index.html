@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Speech Recognition System</h2>
+                        <p class="card-text">This is a simple speech recognition system that can recognize speech from an uploaded audio file and convert it into text.</p>
+                        <h3 class="card-subtitle mb-3">Upload a new file</h3>
+                        <form method="POST" enctype="multipart/form-data" action="/">
+                            <div class="mb-3">
+                                <input type="file" class="form-control-file" name="file" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Transcribe</button>
+                        </form>
+                        {% if transcript != "" %}
+                        <div class="mt-4">
+                            <h4>Transcribed Text:</h4>
+                            <p>{{ transcript }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
